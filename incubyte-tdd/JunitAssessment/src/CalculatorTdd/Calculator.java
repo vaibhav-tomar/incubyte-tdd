@@ -2,7 +2,11 @@ package CalculatorTdd;
 
 public class Calculator {
 	
-	public static int add(String number) {
-		return 0;
+	public static int add(String str) {
+		
+		if(str.isEmpty()) return 0;
+		else {
+			return Integer.parseInt(str);
+		}
 	}
 }

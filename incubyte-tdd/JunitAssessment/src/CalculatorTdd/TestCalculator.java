@@ -10,4 +10,9 @@ public class TestCalculator {
 	public void returnZeroIfEmpty() {
 		assertEquals(0,Calculator.add(""));
 	}
+	
+	@Test
+	public void returnNumberIfOnlyOneNumberIsPresent() {
+		assertEquals(1, Calculator.add("1"));
+	}
 }
