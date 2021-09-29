@@ -1,6 +1,6 @@
 package CalculatorTdd;
 
-import java.util.StringTokenizer;
+
 
 public class Calculator {
 	
@@ -9,9 +9,13 @@ public class Calculator {
 		if(str.isEmpty()) return 0;
 		else if(str.contains(",")){
 			String [] tokens = str.split(",");
-			int a = Integer.parseInt(tokens[0]);
-			int b = Integer.parseInt(tokens[1]);
-			return a+b;
+			int l = tokens.length;
+			int i=0;
+			int sum=0;
+			while(i<l) {
+			sum += Integer.parseInt(tokens[i++]) ;
+			}
+			return sum;
 		}
 		else {
 			return Integer.parseInt(str);
