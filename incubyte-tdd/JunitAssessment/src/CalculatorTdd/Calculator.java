@@ -1,6 +1,7 @@
 package CalculatorTdd;
 
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Calculator {
 	
@@ -27,9 +28,15 @@ public class Calculator {
 		int l = tokens.length;
 		int i=0;
 		int sum=0;
+		List<Integer> listNegative = new ArrayList<>();
 		while(i<l) {
+		if(Integer.parseInt(tokens[i])<0) listNegative.add(Integer.parseInt(tokens[i]));
 		sum += Integer.parseInt(tokens[i++]) ;
 		}
+		if (listNegative.size()>0) {
+			throw new RuntimeException("negatives not allowed : " + listNegative);
+		}
+		else
 		return sum;
 	}
 	
